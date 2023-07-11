@@ -1,11 +1,12 @@
 import streamlit as st
 #from streamlit_js_eval import streamlit_js_eval
 import pyautogui
-import os
+from decouple import config
 
-os.environ['DISPLAY'] = ':0'
 st.set_page_config(page_title="Calculate Intrinsic Value", layout="wide")
 st.title("Calculate Intrinsic Value Stock Investing")
+DISPLAY = config('DISPLAY') 
+st.write(DISPLAY)
 refresh = st.button("Refresh")
 if refresh:
     try:

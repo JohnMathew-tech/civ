@@ -1,12 +1,14 @@
 import streamlit as st
-from streamlit_js_eval import streamlit_js_eval
+#from streamlit_js_eval import streamlit_js_eval
+import pyautogui
 
 st.set_page_config(page_title="Calculate Intrinsic Value", layout="wide")
 st.title("Calculate Intrinsic Value Stock Investing")
 refresh = st.button("Refresh")
 if refresh:
     try:
-        streamlit_js_eval(js_expressions="parent.window.location.reload()")
+        #streamlit_js_eval(js_expressions="parent.window.location.reload()")
+        pyautogui.hotkey('f5')
     except:
         st.write("Error in Refreshing. Please try again later")
         

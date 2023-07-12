@@ -1,20 +1,21 @@
 import streamlit as st
-#from streamlit_js_eval import streamlit_js_eval
-import pyautogui
-from decouple import config
+from streamlit_js_eval import streamlit_js_eval 
+import webbrowser
 
 st.set_page_config(page_title="Calculate Intrinsic Value", layout="wide")
 st.title("Calculate Intrinsic Value Stock Investing")
-DISPLAY = config('DISPLAY') 
-st.write(DISPLAY)
+def reload():
+    webbrowser.open("http://localhost:8501")
+    
 refresh = st.button("Refresh")
 if refresh:
     try:
-        #streamlit_js_eval(js_expressions="parent.window.location.reload()")
-        pyautogui.hotkey('f5')
+        streamlit_js_eval(js_expressions="parent.window.location.reload()")
+        #reload()
     except:
         st.write("Error in Refreshing. Please try again later")
         
+
 def dcf_calculate_intrinsic_value():
     # Get input field values
     #st.write("Calculate button click is working")

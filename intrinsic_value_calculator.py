@@ -1,21 +1,17 @@
 import streamlit as st
-from streamlit_js_eval import streamlit_js_eval 
-import webbrowser
+#from streamlit_js_eval import streamlit_js_eval
+#import pyautogui
 
 st.set_page_config(page_title="Calculate Intrinsic Value", layout="wide")
 st.title("Calculate Intrinsic Value Stock Investing")
-def reload():
-    webbrowser.open("http://65.2.82.6:8501")
-    
-refresh = st.button("Refresh")
-if refresh:
-    try:
+#refresh = st.button("Refresh")
+#if refresh:
+    #try:
         #streamlit_js_eval(js_expressions="parent.window.location.reload()")
-        reload()
-    except:
-        st.write("Error in Refreshing. Please try again later")
+        #st.empty()
+    #except:
+        #st.write("Error in Refreshing. Please try again later")
         
-
 def dcf_calculate_intrinsic_value():
     # Get input field values
     #st.write("Calculate button click is working")
@@ -161,7 +157,7 @@ with col1.container():
     dcf_form = st.form("dcf-form")
     with dcf_form:
         #input1 = form.number_input(label="Predicted Average Growth Rate Per Year for the next five years",  step =1., format ="%.2f")
-        input1 = st.slider(label="Predicted Average Growth Rate Per Year for the next five years in %", key="f1", min_value = 0.00, max_value = 100.00, step =.05, format ="%.2f")
+        input1 = st.slider(label="Predicted Average Growth Rate Per Year for the next five years in %",  min_value = 0.00, max_value = 100.00, step =.05, format ="%.2f")
         #st.write("Predicted Growth Rate for the sixth to ninth years")
         #input2 = form.number_input("Predicted Average Growth Rate Per Year for the sixth to ninth years",  step =1., format ="%.2f")
         input2 = st.slider(label="Predicted Average Growth Rate Per Year for the sixth to ninth years in %", min_value = 0.00, max_value = 100.00, step =.05, format ="%.2f")

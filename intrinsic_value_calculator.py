@@ -5,13 +5,13 @@ import webbrowser
 st.set_page_config(page_title="Calculate Intrinsic Value", layout="wide")
 st.title("Calculate Intrinsic Value Stock Investing")
 def reload():
-    webbrowser.open("http://localhost:8501")
+    webbrowser.open("http://65.2.82.6:8501")
     
 refresh = st.button("Refresh")
 if refresh:
     try:
-        streamlit_js_eval(js_expressions="parent.window.location.reload()")
-        #reload()
+        #streamlit_js_eval(js_expressions="parent.window.location.reload()")
+        reload()
     except:
         st.write("Error in Refreshing. Please try again later")
         

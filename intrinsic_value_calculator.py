@@ -131,7 +131,6 @@ def bg_calculate_intrinsic_value():
 #st.write("Predicted Growth Rate for next five years")
 hide_streamlit_style = """
             <style>
-            #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             .stButton > button {
                 color: black;
